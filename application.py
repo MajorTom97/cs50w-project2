@@ -3,7 +3,7 @@ import os
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_socketio import SocketIO, emit, send, leave_room, join_room
 from helpers import login_required
-from time import localtime
+from time import localtime, strftime
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
@@ -15,7 +15,10 @@ channels = ["general"]
 
 @app.route("/")
 def index():
-    return redirect(url_for("chat"))
+    if "nickname" in session:
+        return render_template("chat.html")
+    else:
+        return render_template("signin.html")
 
 @app.route("/singin", methods=["GET", "POST"])
 def singin():
@@ -23,7 +26,7 @@ def singin():
        nickname = request.form.get("nickname")
         # Check if the nicknmane is already useb by current user or not
        if nickname in nicknames:
-           return redirect(url_for("signin"), message="Nickname already taken") 
+           return redirect("/signin", message="Nickname already taken") 
        # Session updated and add user to logged-in users
        session['nickname'] = nickname
        # Add an nickname with value 
@@ -31,8 +34,7 @@ def singin():
        #Initialize the general channel
        session['currentChannel'] = "general"
        
-       return redirect(url_for("chat"))
-    
+       return redirect("/chat")    
     else: 
         request.method == "GET"
         return render_template("signin.html")

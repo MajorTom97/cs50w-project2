@@ -1,3 +1,4 @@
+alert ('Conected');
 document.addEventListener('DOMContentLoaded', () => {
 
     var onstorage = window.localStorage;
@@ -5,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log = ("var nickname" + nickname);
         console.log = ("var channel" + channel);
         console.log = ("onstorage.currentChannel" + onstorage.currentChanel);
-        console.log = ("onstorage.privateRoom" + onstorage.privateRoom);
+        // console.log = ("onstorage.privateRoom" + onstorage.privateRoom);
     };
 
     // Websocket
