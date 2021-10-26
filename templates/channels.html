@@ -33,18 +33,6 @@ Channels
               </div>
             </div>
         </div>
-        <!-- display list of channels -->
-        <div class="list">
-            {% for channel in channels %}
-                <li class="nav-item">
-                    {% if channel == currentChannel %}
-                        <a class="nav-link highlight">#{{ channel }}</a>
-                    {% else %}
-                        <a class="nav-link">#{{ channel }}</a>
-                    {% endif %}
-                    <span class="message-num">{{ channels[channel]|length }}</span>
-                </li>
-            {% endfor %}
         </div>
     </ul>
 </div>

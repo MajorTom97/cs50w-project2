@@ -5,91 +5,36 @@ Let's start!
 {% endblock %}
 
 {% block content %}
-<head>
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="../static/styles/stylebase.css">
-</head>
+
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/styles/stylebase.css">
+
 <body>
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bx-flag'></i>
-        <div class="logo_name">FLACK</div>
-        <i class='bx bx-menu' id="btn" ></i>
+  <div class="row">
+    <div class="col">
+      <h1>FLACK</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia saepe magnam quasi eveniet, unde autem, voluptates ratione maxime aliquam, repellendus ipsum? Iure esse ducimus asperiores minus, obcaecati eum maxime. Quia?</p>
+      <button type="button">New Channel!</button>
     </div>
-    <ul class="nav-list">
-      <li>
-          <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
-         <span class="tooltip">Search</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-grid-alt'></i>
-          <span class="links_name">#UFLACK</span>
-        </a>
-         <span class="tooltip">#UFLACK</span>
-      </li>
-      <li>
-       <a href="#">
-         <i class='bx bx-user' ></i>
-         <span class="links_name">User</span>
-       </a>
-       <span class="tooltip">User</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
-       </a>
-       <span class="tooltip">Messages</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Channels</span>
-       </a>
-       <span class="tooltip">Channels</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
-     </li>
-
-    </ul>
+    <div class="col">
+      <div class="card general">
+        <h5>General Channel</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illo iure harum rem! Iusto, eaque ut! Quo expedita cum adipisci? Eligendi incidunt inventore minus? Quod itaque ea excepturi qui repudiandae!</p>
+      </div>
+      <div class="card cinema">
+        <h5>Cinema</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illo iure harum rem! Iusto, eaque ut! Quo expedita cum adipisci? Eligendi incidunt inventore minus? Quod itaque ea excepturi qui repudiandae!</p>
+      </div>
+      <div class="card science">
+        <h5>Science</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illo iure harum rem! Iusto, eaque ut! Quo expedita cum adipisci? Eligendi incidunt inventore minus? Quod itaque ea excepturi qui repudiandae!</p>
+      </div>
+      <div class="card astro">
+        <h5>Astronomy</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit illo iure harum rem! Iusto, eaque ut! Quo expedita cum adipisci? Eligendi incidunt inventore minus? Quod itaque ea excepturi qui repudiandae!</p>
+      </div>
+    </div>
   </div>
-  <section class="home-section">
-      <div class="text">Most Recently...</div>
-  </section>
-  <script>
-  let sidebar = document.querySelector(".sidebar");
-  let closeBtn = document.querySelector("#btn");
-  let searchBtn = document.querySelector(".bx-search");
-
-  closeBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("open");
-    menuBtnChange();//calling the function(optional)
-  });
-
-  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-    sidebar.classList.toggle("open");
-    menuBtnChange(); //calling the function(optional)
-  });
-
-  // following are the code to change sidebar button(optional)
-  function menuBtnChange() {
-   if(sidebar.classList.contains("open")){
-     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
-   }else {
-     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
-   }
-  }
-  </script>
 </body>
-{% block content %} {% endblock %}
 
 {% endblock %}
-</body>
-</html>
