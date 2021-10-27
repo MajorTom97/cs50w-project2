@@ -38,3 +38,28 @@ Let's start!
 </body>
 
 {% endblock %}
+
+<!-- //Local Storage on current channel
+        if (storage.currentChannel){
+            if (onstorage.privateRoom === "false"){
+                joinChannel(onstorage.currentChannel);
+                channel = onstorage.currentChannel;
+            } else if (onstorage.privateRoom === "true"){
+                joinPrivateRoom(onstorage.currentChannel);
+                channel = onstorage.currentChannel;
+            } else {
+                // Default channel #general
+                joinChannel(channel);
+            }
+        } -->
+<!-- 
+        socket.on('message', function(msg) {
+          // Insert Content 
+          $('#texto-msj').append('<li>' + msg + '</li>')
+        })
+          //Send message
+        document.querySelector('#send-msg').onclick = () => {
+          console.log(document.querySelector("#user-msg").value);
+          socket.send(('#mi-msj').val());
+          $('#mi-msj').val('');
+        } -->
