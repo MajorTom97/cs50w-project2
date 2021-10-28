@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var onstorage = window.localStorage;
 
     var nickname = localStorage.getItem('nickname');
-    var currentChannel = localStorage.getItem('currentChannel')
+    //var currentChannel = localStorage.getItem('currentChannel')
     
     var debugChannel = function() {
         console.log = ("var nickname" + nickname);
@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    socekt.on('join', data => {
+        const li = document.createElement("li");
+        li.className = "list"
+        li.innerHTML = <b>${data.messages};
+        //document.querySelector("#task").append(li);
+        //console.log("Send")
+    })
 
     // Send Message
     document.querySelector("#message").onclick = () =>{

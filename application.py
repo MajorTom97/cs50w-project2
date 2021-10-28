@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, redirect, render_template, request, session, url_for
-from flask_socketio import SocketIO, emit, send
+from flask_socketio import SocketIO, emit, send, join_room, leave_room
 from helpers import login_required
 from time import localtime, strftime
 
@@ -12,7 +12,12 @@ socketio = SocketIO(app)
 
 # global variables
 nicknames = []
-channels = ["general"]
+channels = []
+channels.append("General")
+max_messages = 100
+
+# Messages on the current channel
+channelMessage = dict()
 
 @app.route("/")
 def index():
@@ -39,7 +44,7 @@ def chat():
        # Add the list the names
        nicknames.append(nickname)
        #Initialize the general channel
-       session['currentChannel'] = "general"
+       session['currentChannel'] = "General"
        print("---------------------")
        print(nickname)
        print(session['name'])
@@ -56,16 +61,20 @@ def logout():
 @socketio.on('connect')
 def channel_list():
     emit('all-channels', channels=[])
+    
 
 @socketio.on('newChannel')
 def create_channel(data):
     global channels
-    channel = data[""]
+    newChannel=request.form.get("newChannel")
+    channel = data["channel"]
     # Identified if the new Channel already exitst 
-    if channel and "" not in channels:
+    if channel and channel not in channels:
         channels[channel] = []
         # Emit on the client-side
+        print("------------")
         emit('newChannel', channel, broadcast=True)
+        print("New Channel {channel} is ready to use!")
     else:
         print(f'{channel}: name channel already taken')
 
@@ -73,12 +82,37 @@ def create_channel(data):
 @socketio.on('messages')
 def newMessages(data):
     global channels
-    channel = data["channel"]
-    message = {
-        "author": data["nickname"],
-        "message": data["message"],
-        "timestamp": strftime('%H', localtime())
-    }
+    # channel = data["channel"]
+    channel = session.get("channel")
+    message = ["message"]
+    time = strfttime(localtime())
+    channel = session.get("channel")
+    channelMessage[channel].append([session.get("nickname"), message, time])
+    emit("newMsj", {
+        "nickname": session.get("nickname"),
+        "message": message,
+        "time": time},
+        channel=channel)
+    # if lenght channels dictionary return the list of channels where message id
+    # equal to the lsit of channels and display the new message on the screen
+    if len(channels[channel]):
+        message["message"] = channels[channel][-1]["message"][+1]
+    else:
+        message["message"] = 0
 
-    if __name__=="__main__":
-        socketio.run(app)
+    channels[channel] += [message]
+    emit(f'New Messages on channel', message, channel)
+
+@socket.io("join")
+def join_on():
+    nickname = session.get("nickname")
+    channel = session.get("channel")
+    join_room(channel)
+    emit("Joined to {channel}", {
+        "message": nickname + "new messages"}, channel=channel)
+    print("--------")
+    print('{nickname} joined the {channel}')
+    print("--------")
+
+if __name__=="__main__":
+    socketio.run(app)
