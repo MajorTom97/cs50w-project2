@@ -31,21 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
     socekt.on('join', data => {
         const li = document.createElement("li");
         li.className = "list"
-        li.innerHTML = <b>${data.messages};
-        //document.querySelector("#task").append(li);
+        li.innerHTML = <b>${data.messages}</b>;
+        //document.querySelector("#join").append(li);
         //console.log("Send")
     })
 
     // Send Message
-    document.querySelector("#message").onclick = () =>{
+    document.querySelector("#messages").onclick = () => {
         console.log(document.querySelector("user_message").value);
-
-        // Display messages to general channel
-        let data = {'message': document.querySelector("user_message").value, 'username':nickname, 'timestamp':formatTimestamp()};
-        formatMessage(data);
+        var message = document.querySelector("#send").value;
+        var nickname = localStorage.getItem("name");
+        var time = new Date;
+        socket.emit("message", {"name": nickname, "message": message, "time": time})
+    
+        // Clear the box chat
+        document.querySelector("user_message").value = "";
     }
     
-    // Clear the box chat
-    document.querySelector("user_message").value = "";
+    socket.on("newMessage", data => {
+        var message_container = document.querySelector("#newMessages");
+        //var message_received = 
+    })
+
 
 });

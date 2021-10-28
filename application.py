@@ -85,7 +85,7 @@ def newMessages(data):
     # channel = data["channel"]
     channel = session.get("channel")
     message = ["message"]
-    time = strfttime(localtime())
+    time = strftime(localtime())
     channel = session.get("channel")
     channelMessage[channel].append([session.get("nickname"), message, time])
     emit("newMsj", {
@@ -103,7 +103,7 @@ def newMessages(data):
     channels[channel] += [message]
     emit(f'New Messages on channel', message, channel)
 
-@socket.io("join")
+@socketio.on("join")
 def join_on():
     nickname = session.get("nickname")
     channel = session.get("channel")
