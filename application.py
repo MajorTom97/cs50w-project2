@@ -24,7 +24,7 @@ def index():
     if "name" in session:
         return render_template("chat.html", channels=channels)
     else:
-        return render_template("signin.html")
+        return render_template("base.html")
 
 @app.route("/chat", methods=["GET", "POST"])
 def chat():
@@ -32,7 +32,7 @@ def chat():
         if "name" in session:
             return render_template("chat.html")
         else:
-            return render_template("signin.html")
+            return render_template("base.html")
     else:
 
        nickname = request.form.get("nickname")

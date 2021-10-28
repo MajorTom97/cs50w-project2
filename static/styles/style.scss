@@ -4,10 +4,10 @@
     font-family: 'Rampart One', cursive;
   }
   
-  .container{
+  .container-footer{
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.7)), url(../styles/img/kite-base.jpg);
+    background-color: orange;
     background-position: center;
     background-size: cover;
   }
@@ -22,6 +22,19 @@
     border-radius: 20px;
     outline: none;
     margin-top: 30px;
+  }
+
+
+  @media screen and (max-width: 992px) {
+    body {
+      background-color: aquamarine;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    body {
+      background-color: olivedrab;
+    }
   }
   
   .card{
@@ -38,19 +51,19 @@
     transition: transform 0.5s;
   }
   
-  .cardgeneral{
+  .card-general{
     background-image: url(../styles/img/general.png);
   }
   
-  .cardcinema{
+  .card-cinema{
     background-image: url(../styles/img/cinema.png);
   }
   
-  .cardscience{
+  .card card-science{
     background-image: url(../styles/img/science.jpg);
   }
   
-  .cardastro{
+  .card-astro{
     background-image: url(../styles/img/astronomy.png);
   }
   

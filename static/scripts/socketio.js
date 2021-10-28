@@ -1,4 +1,4 @@
-alert ('Conected');
+alert ('Connected');
 document.addEventListener('DOMContentLoaded', () => {
 
     var onstorage = window.localStorage;
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    socekt.on('join', data => {
+    socket.on('join', data => {
         const li = document.createElement("li");
         li.className = "list"
         li.innerHTML = <b>${data.messages}</b>;
