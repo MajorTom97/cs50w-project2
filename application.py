@@ -103,6 +103,7 @@ def newMessages(data):
     channels[channel] += [message]
     emit(f'New Messages on channel', message, channel)
 
+# Join to a channel
 @socketio.on("join")
 def join_on():
     nickname = session.get("nickname")

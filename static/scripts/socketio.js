@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement("li");
         li.className = "list"
         li.innerHTML = <b>${data.messages}</b>;
+        $("#list").append(li);
         //document.querySelector("#join").append(li);
         //console.log("Send")
     })
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     socket.on("newMessage", data => {
-        var message_container = document.querySelector("#newMessages");
+        var message = document.querySelector("#newMessages");
         //var message_received = 
     })
 
