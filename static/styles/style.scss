@@ -1,9 +1,24 @@
+$blue: rgb(122, 122, 201);
 *{
     margin: 0;
     padding: 0;
     font-family: 'Rampart One', cursive;
   }
   
+// Chat Panel
+body{
+  background-image: url(../styles/img/background.jpg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.container{
+  margin: 60px auto;
+  background: #fff;
+  padding: 0;
+  border-radius: 7px;
+}
   .container-footer{
     width: 100%;
     height: 100vh;
@@ -12,6 +27,117 @@
     background-size: cover;
   }
   
+  .profile-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 40px;
+  }
+
+  .settings-tray {
+    background: #eee;
+    padding: 10px 15px;
+    border-radius: 7px;
+    
+    .no-gutters {
+      padding: 0;
+    }
+    
+    &--right {
+      float: right;
+      
+      i {
+        margin-top: 10px;
+        font-size: 25px;
+        color: grey;
+        margin-left: 14px;
+        transition: .3s;
+        
+        &:hover {
+          color: $blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .search-box {
+    background: #fafafa;
+    padding: 10px 13px;
+    
+    .input-wrapper {
+      background: #fff;
+      border-radius: 40px;
+      
+      i {
+        color: grey;
+        margin-left: 7px; 
+        vertical-align: middle;
+      }
+    }
+  }
+
+  // Input Search Channel
+  input {
+    border: none;
+    border-radius: 30px;
+    width: 80%;
+  
+    &::placeholder {
+      color: #e3e3e3;
+      font-weight: 300;
+      margin-left: 20px;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+
+// Channels Column
+  .channels {
+    padding: 10px 15px;
+    display: flex;
+    vertical-align: baseline;
+    background: #fff;
+    transition: .3s ease;
+    
+    &--grey {
+      background: #eee;
+    }
+
+    &--onhover:hover {
+      background: $blue;
+      cursor: pointer;
+    }
+  }
+  
+  hr {
+    margin: 5px auto;
+    width: 60%;
+  }
+
+  .chat-bubble {
+    padding: 10px 14px;
+    background: #eee;
+    margin: 10px 30px;
+    border-radius: 9px;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 20px solid transparent;
+      border-bottom: 0;
+      margin-top: -10px;
+    }
+  }   
+
+
+// Base
   .button{
     width: 180px;
     color: purple;
@@ -24,10 +150,14 @@
     margin-top: 30px;
   }
 
+  hr{
+    margin: 5px auto;
+    width: 60%;
+  }
   
   @media screen and (max-width: 992px) {
     body {
-      background-color: aquamarine;
+      background-color: wheat;
     }
   }
   
@@ -60,7 +190,7 @@
   }
   
   .card-science{
-    background-image: url(../styles/img/science.jpg);
+    background-image: url(../styles/img/science2.png);
   }
   
   .card-astro{
