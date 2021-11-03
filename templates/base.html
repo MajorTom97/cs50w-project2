@@ -6,48 +6,65 @@ Sign in
 
 {% block content %}
 <!-- Bienvenue to Flack -->
-<section class="section">
-    <div class="container">
-        <h1 class="title">
-        Hello and Welcome to Flack!
-        </h1>
-        <p class="subtitle">
-        A place to hang with your <strong>Goodfellas</strong>!
-        </p>
-    </div>
-    </section>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
+<div class="container-section">
+    <h1 class="title" style="color: aqua;">
+    Hello and Welcome to Flack!
+    </h1>
+    <p class="subtitle" style="color: burlywood;">
+    A place to hang with your <strong>Goodfellas</strong>!
+    </p>
+</div>
+
+
+
+<div class="row no-gutters">
+    <div class="col-8">
         <form action="/chat" method="POST">
             <div class="form-group">
-              <input type="text" class="form-control" id="nick" name="nickname" placeholder="nickname">
-              <small class="form-text text-muted">Pick a tricky nickname!</small>
+                <input type="text" class="form-control" id="nick" name="nickname" placeholder="Nickname">
+                <small class="form-text text-muted">Pick a tricky nickname!</small>
             </div>
-            <button type="submit" class="btn btn-dark">Sign in</button>
-          </form>
-        </div>
-        <div class="col">
-        <div class="card card-general">
-            <h5>General Channel</h5>
-            <p>Your own space!</p>
-        </div>
-        <div class="card card-cinema">
-            <h5>Cinema</h5>
-            <p>Talk about it!</p>
-        </div>
-        <div class="card card-science">
-            <h5>Science</h5>
-            <p>Have some fun by learning a topic!</p>
-        </div>
-        <div class="card card-astro">
-            <h5>Astronomy</h5>
-            <p>Astonished and great topic to discuss all days!</p>
-        </div>
+            <button type="submit" class="button_signin">Sign in</button>
+        </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/styles/img/general.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">General Channel</h5>
+                        <p class="card-text">Your own Space!</p>
+                        <a href="#" class="btn btn-dark">Join</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="../static/styles/img/cinema.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cinema</h5>
+                            <p class="card-text">Talk about it!</p>
+                            <a href="#" class="btn btn-primary">Join</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card text-center" style="width: 18rem;">
+                        <img src="../static/styles/img/science2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Science</h5>
+                            <p class="card-text">Have some fun by learning a topic!</p>
+                            <a href="#" class="btn btn-primary">Join</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 

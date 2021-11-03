@@ -5,6 +5,61 @@ $blue: #FFD8BE;
     font-family: 'Rampart One', cursive;
   }
   
+// Base
+
+.button_signin{
+  width: 250px;
+  color: white;
+  font-size: 20px;
+  padding:12px 0;
+  background: darkblue;
+  border:0;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 30px;
+}
+
+.button_signin:hover{
+  transition: purple ;
+}
+
+.card{
+  margin: 20px 10px;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  text-align: center;
+  text-emphasis-color: purple;
+  
+}
+
+.card-body{
+  box-shadow: 0 0 20px 7px;
+}
+
+.card-body a{
+  color:darkcyan;
+  text-decoration: none;
+  font-size: 15px;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+.card-body a:hover{
+  color:darkorchid;
+  text-decoration: none;
+}
+.card:hover{
+  transform: translateY(-10px);
+}
+
+.container-section{
+  text-align: center;
+}
+
 // Chat Panel
 body{
   background-image: url(../styles/img/background.jpg);
@@ -16,192 +71,94 @@ body{
   padding: 0;
   border-radius: 10px;
 }
-  .footer{
-    background-color: orange;
-    background-position: center;
-    background-size: cover;
+ 
+.profile-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+
+.footer{
+  background-color: orange;
+  background-position: bottom;
+  background-size: cover;
+  
+}
+
+.settings-tray {
+  background: #85CB33;
+  padding: 10px 15px;
+  border-radius: 8px;
+  
+  .no-gutters {
+    padding: 0;
   }
   
-  .profile-image{
-    width: 50px;
-    height: 50px;
-    border-radius: 40px;
-  }
-
-  .settings-tray {
-    background: #85CB33;
-    padding: 10px 15px;
-    border-radius: 8px;
+  &--right {
+    float: right;
     
-    .no-gutters {
-      padding: 0;
-    }
-    
-    &--right {
-      float: right;
+    i {
+      margin-top: 10px;
+      font-size: 20px;
+      color: brown;
+      margin-left: 14px;
+      transition: .3s;
       
-      i {
-        margin-top: 10px;
-        font-size: 25px;
-        color: grey;
-        margin-left: 14px;
-        transition: .3s;
-        
-        &:hover {
-          color: $blue;
-          cursor: pointer;
-        }
+      &:hover {
+        color: $blue;
+        cursor: pointer;
       }
     }
   }
+}
 
-  .search-box {
-    background: #A8D5E2;
-    padding: 10px 13px;
+.search-box {
+  background: #A8D5E2;
+  padding: 10px 13px;
+  
+  .input-wrapper {
+    background: #4FB477;
+    border-radius: 20px;
     
-    .input-wrapper {
-      background: #4FB477;
-      border-radius: 50px;
-      
-      i {
-        color: #DCFFFD;
-        margin-left: 7px; 
-        vertical-align: middle;
-      }
+    i {
+      color: #DCFFFD;
+      margin-left: 7px; 
+      vertical-align: middle;
     }
+  }
+}
+
+// Input Search Channel
+input {
+  border: none;
+  border-radius: 20px;
+  width: 80%;
+
+  &::placeholder {
+    color: darkred;
+    font-weight: 300;
+    margin-left: 40px;
   }
 
-  // Input Search Channel
-  input {
-    border: none;
-    border-radius: 30px;
-    width: 80%;
-  
-    &::placeholder {
-      color: #52FFEE;
-      font-weight: 300;
-      margin-left: 20px;
-    }
-  
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
   }
+}
 
 // Channels Column
-  .channels {
-    padding: 10px 15px;
-    display: flex;
-    vertical-align: baseline;
-    background: #9381FF;
-    transition: .3s ease;
-    
-    &--grey {
-      background: #eee;
-    }
-
-    &--onhover:hover {
-      background: $blue;
-      cursor: pointer;
-    }
-  }
+.channels {
+  padding: 10px 15px;
+  display: flex;
+  vertical-align: baseline;
+  background: #9381FF;
+  transition: .3s ease;
   
-  hr {
-    margin: 5px auto;
-    width: 60%;
+  &--grey {
+    background: #eee;
   }
 
-  .chat-bubble {
-    padding: 10px 14px;
-    background: #A8D5E2;
-    margin: 10px 30px;
-    border-radius: 9px;
-    position: relative;
-    animation: fadeIn 1s ease-in;
-    
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      width: 0;
-      height: 0;
-      border: 20px solid transparent;
-      border-bottom: 0;
-      margin-top: -10px;
-    }
-  }   
-
-
-// Base
-  .button{
-    width: 180px;
-    color: purple;
-    font-size: 12px;
-    padding:12px 0;
-    background: #fff;
-    border:0;
-    border-radius: 20px;
-    outline: none;
-    margin-top: 30px;
-  }
-
-  hr{
-    margin: 5px auto;
-    width: 60%;
-  }
-  
-  @media screen and (max-width: 992px) {
-    body {
-      background-color: wheat;
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    body {
-      background-color: olivedrab;
-    }
-  }
-  
-  .card{
-    width: 200px;
-    height: 230px;
-    display: inline-block;
-    border-radius: 10px;
-    padding: 15px 25px;
-    box-sizing: border-box;
+  &--onhover:hover {
+    background: $blue;
     cursor: pointer;
-    margin: 10px 15px;
-    background-position: center;
-    background-size: cover;
-    transition: transform 0.5s;
   }
-  
-  .card-general{
-    background-image: url(../styles/img/general.png);
-  }
-  
-  .card-cinema{
-    background-image: url(../styles/img/cinema.png);
-  }
-  
-  .card-science{
-    background-image: url(../styles/img/science2.png);
-  }
-  
-  .card-astro{
-    background-image: url(../styles/img/astronomy.png);
-  }
-  
-  .card:hover{
-    transform: translateY(-10px);
-  }
-  
-  h5{
-    color:sandybrown;
-    text-shadow: 0 0 5px #999;
-  }
-  
-  .card p{
-    text-shadow: 0 0 15px #000;
-    font-size: 8px;
-  }
+}

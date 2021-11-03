@@ -12,18 +12,13 @@ Chat Room
   <div class="row no-gutters">
     <!--Channel Column-->
     <div class="col-4" style="height: 90vh; width:auto">
-      <div class="row">
+      <div class="row no-gutters">
         <!--Menu Navbar -->
 
-        <div class="settings-tray" style="height: 10vh; width:auto">
+        <div class="settings-tray col-12" style="height: 10vh; width:auto">
           <img class="profile-image"
             src="../static/styles/img/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"
             alt="">
-          <span class="settings-tray-right">
-            <i class="fa fa-refresh" aria-hidden="true">Refresh</i>
-            <i class="fa fa-moon-o" aria-hidden="true">Night Mood</i>
-            <i class="fa fa-bars" aria-hidden="true">Menu</i>
-          </span>
         </div>
 
         <!--Search for a channel-->
@@ -83,7 +78,7 @@ Chat Room
 
     <!--Messages Column-->
     <div class="col-8">
-      <div class="row">
+      <div class="row no-gutters">
         <!--Menu Navbar-->
         <div class="col-12 settings-tray" style="height:10vh; width:auto">
           <!--Information of the channel-->
@@ -100,20 +95,23 @@ Chat Room
               <h6>Hello, </h6>
             </div>
             <!--Messages Here-->
+
+            <div class="row no-gutters">
             <div class="col-12 bg-primary" style="height: 76vh; width:auto" id="id_messages">
               
+
+              </div>
             </div>
           </div>
         </div>
         <!--Input Messages-->
         <div class="col-12 messages-panel" id="send">
           <div class="row no-gutters">
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Type Something" aria-label="Recipient's username"
-                aria-describedby="button-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-warning" type="button" id="button-addon2">Send</button>
-              </div>
+                <div class="input-group mb-3" id="inputmessage">
+                  <input type="text" class="form-control" placeholder="Type Something" aria-label="Recipient's username"
+                    aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-warning" type="button" id="button-addon2">Send</button>
             </div>
           </div>
         </div>
@@ -122,11 +120,4 @@ Chat Room
 </div>
 </div>
 
-
-<script type="text/javascript">
-  $('.user-drawer--onhover').on('click', function () {
-
-    $('.chat-bubble').hide('slow').show('slow');
-  });
-</script>
 {% endblock %}

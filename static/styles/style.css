@@ -4,6 +4,67 @@
   font-family: 'Rampart One', cursive;
 }
 
+.button_signin {
+  width: 250px;
+  color: white;
+  font-size: 20px;
+  padding: 12px 0;
+  background: darkblue;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 30px;
+}
+
+.button_signin:hover {
+  -webkit-transition: purple;
+  transition: purple;
+}
+
+.card {
+  margin: 20px 10px;
+  border-radius: 10px;
+  padding: 15px 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  text-align: center;
+  -webkit-text-emphasis-color: purple;
+          text-emphasis-color: purple;
+}
+
+.card-body {
+  -webkit-box-shadow: 0 0 20px 7px;
+          box-shadow: 0 0 20px 7px;
+}
+
+.card-body a {
+  color: darkcyan;
+  text-decoration: none;
+  font-size: 15px;
+  margin-top: auto;
+  font-weight: 600;
+}
+
+.card-body a:hover {
+  color: darkorchid;
+  text-decoration: none;
+}
+
+.card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.container-section {
+  text-align: center;
+}
+
 body {
   background-image: url(../styles/img/background.jpg);
 }
@@ -15,16 +76,16 @@ body {
   border-radius: 10px;
 }
 
-.footer {
-  background-color: orange;
-  background-position: center;
-  background-size: cover;
-}
-
 .profile-image {
   width: 50px;
   height: 50px;
   border-radius: 40px;
+}
+
+.footer {
+  background-color: orange;
+  background-position: bottom;
+  background-size: cover;
 }
 
 .settings-tray {
@@ -43,8 +104,8 @@ body {
 
 .settings-tray--right i {
   margin-top: 10px;
-  font-size: 25px;
-  color: grey;
+  font-size: 20px;
+  color: brown;
   margin-left: 14px;
   -webkit-transition: .3s;
   transition: .3s;
@@ -62,7 +123,7 @@ body {
 
 .search-box .input-wrapper {
   background: #4FB477;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .search-box .input-wrapper i {
@@ -73,32 +134,32 @@ body {
 
 input {
   border: none;
-  border-radius: 30px;
+  border-radius: 20px;
   width: 80%;
 }
 
 input::-webkit-input-placeholder {
-  color: #52FFEE;
+  color: darkred;
   font-weight: 300;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 input:-ms-input-placeholder {
-  color: #52FFEE;
+  color: darkred;
   font-weight: 300;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 input::-ms-input-placeholder {
-  color: #52FFEE;
+  color: darkred;
   font-weight: 300;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 input::placeholder {
-  color: #52FFEE;
+  color: darkred;
   font-weight: 300;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 input:focus {
@@ -123,109 +184,5 @@ input:focus {
 .channels--onhover:hover {
   background: #FFD8BE;
   cursor: pointer;
-}
-
-hr {
-  margin: 5px auto;
-  width: 60%;
-}
-
-.chat-bubble {
-  padding: 10px 14px;
-  background: #A8D5E2;
-  margin: 10px 30px;
-  border-radius: 9px;
-  position: relative;
-  -webkit-animation: fadeIn 1s ease-in;
-          animation: fadeIn 1s ease-in;
-}
-
-.chat-bubble:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: 20px solid transparent;
-  border-bottom: 0;
-  margin-top: -10px;
-}
-
-.button {
-  width: 180px;
-  color: purple;
-  font-size: 12px;
-  padding: 12px 0;
-  background: #fff;
-  border: 0;
-  border-radius: 20px;
-  outline: none;
-  margin-top: 30px;
-}
-
-hr {
-  margin: 5px auto;
-  width: 60%;
-}
-
-@media screen and (max-width: 992px) {
-  body {
-    background-color: wheat;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    background-color: olivedrab;
-  }
-}
-
-.card {
-  width: 200px;
-  height: 230px;
-  display: inline-block;
-  border-radius: 10px;
-  padding: 15px 25px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-  margin: 10px 15px;
-  background-position: center;
-  background-size: cover;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-}
-
-.card-general {
-  background-image: url(../styles/img/general.png);
-}
-
-.card-cinema {
-  background-image: url(../styles/img/cinema.png);
-}
-
-.card-science {
-  background-image: url(../styles/img/science2.png);
-}
-
-.card-astro {
-  background-image: url(../styles/img/astronomy.png);
-}
-
-.card:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
-
-h5 {
-  color: sandybrown;
-  text-shadow: 0 0 5px #999;
-}
-
-.card p {
-  text-shadow: 0 0 15px #000;
-  font-size: 8px;
 }
 /*# sourceMappingURL=style.css.map */
