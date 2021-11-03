@@ -6,21 +6,16 @@
 
 body {
   background-image: url(../styles/img/background.jpg);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 .container {
-  margin: 60px auto;
-  background: #fff;
+  margin: 70px auto;
+  background: #AF7595;
   padding: 0;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 
-.container-footer {
-  width: 100%;
-  height: 100vh;
+.footer {
   background-color: orange;
   background-position: center;
   background-size: cover;
@@ -33,9 +28,9 @@ body {
 }
 
 .settings-tray {
-  background: #eee;
+  background: #85CB33;
   padding: 10px 15px;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 
 .settings-tray .no-gutters {
@@ -56,22 +51,22 @@ body {
 }
 
 .settings-tray--right i:hover {
-  color: #7a7ac9;
+  color: #FFD8BE;
   cursor: pointer;
 }
 
 .search-box {
-  background: #fafafa;
+  background: #A8D5E2;
   padding: 10px 13px;
 }
 
 .search-box .input-wrapper {
-  background: #fff;
-  border-radius: 40px;
+  background: #4FB477;
+  border-radius: 50px;
 }
 
 .search-box .input-wrapper i {
-  color: grey;
+  color: #DCFFFD;
   margin-left: 7px;
   vertical-align: middle;
 }
@@ -83,25 +78,25 @@ input {
 }
 
 input::-webkit-input-placeholder {
-  color: #e3e3e3;
+  color: #52FFEE;
   font-weight: 300;
   margin-left: 20px;
 }
 
 input:-ms-input-placeholder {
-  color: #e3e3e3;
+  color: #52FFEE;
   font-weight: 300;
   margin-left: 20px;
 }
 
 input::-ms-input-placeholder {
-  color: #e3e3e3;
+  color: #52FFEE;
   font-weight: 300;
   margin-left: 20px;
 }
 
 input::placeholder {
-  color: #e3e3e3;
+  color: #52FFEE;
   font-weight: 300;
   margin-left: 20px;
 }
@@ -116,7 +111,7 @@ input:focus {
   display: -ms-flexbox;
   display: flex;
   vertical-align: baseline;
-  background: #fff;
+  background: #9381FF;
   -webkit-transition: .3s ease;
   transition: .3s ease;
 }
@@ -126,7 +121,7 @@ input:focus {
 }
 
 .channels--onhover:hover {
-  background: #7a7ac9;
+  background: #FFD8BE;
   cursor: pointer;
 }
 
@@ -137,7 +132,7 @@ hr {
 
 .chat-bubble {
   padding: 10px 14px;
-  background: #eee;
+  background: #A8D5E2;
   margin: 10px 30px;
   border-radius: 9px;
   position: relative;
