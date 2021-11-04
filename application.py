@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, redirect, render_template, request, session, url_for
-from flask_socketio import SocketIO, emit, send, join_room, leave_room
+from flask_socketio import SocketIO, emit,  join_room, leave_room
 from helpers import login_required
 from time import localtime, strftime
 
