@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "layout.html" %}
 
 {% block title%}
 Chat Room
@@ -6,7 +6,7 @@ Chat Room
 
 {% block content %}
 
-  
+
 
 <div class="container">
   <div class="row no-gutters">
@@ -15,10 +15,11 @@ Chat Room
       <div class="row no-gutters">
         <!--Menu Navbar -->
 
-        <div class="settings-tray col-12" style="height: 10vh; width:auto">
+        <div class="settings-tray col-12 d-flex " style="height: 10vh; width:auto">
           <img class="profile-image"
             src="../static/styles/img/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"
-            alt="">
+            alt=""> 
+            <p class="my-2 ml-3">{{session.name}}</p>
         </div>
 
         <!--Search for a channel-->
@@ -36,13 +37,13 @@ Chat Room
 
 
         <!--Channels List-->
-        <div class="col-12">
+        <div class="col-12" id="container-channels">
           <!--FOR JINJA CHANNELS-->
-          <h3>All Channels</h3>
+
           {% for channels in channel_list %}
 
           <div class="list-group py-1">
-            <a href="/channel/{{channel_list}}" class="list-group-item">{{channel_list}}</a>
+            <span onclick="channelSelection('{{channels}}')" class="list-group-item">{{channels}}</span>
           </div>
 
           {% endfor %}
@@ -69,7 +70,7 @@ Chat Room
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-ban"
                 aria-hidden="true"></i>Cancel</button>
-            <button type="button" class="btn btn-success"><i class="fa fa-check-circle"
+            <button type="button" onclick="newChannel()" class="btn btn-success"><i class="fa fa-check-circle"
                 aria-hidden="true"></i>Create</button>
           </div>
         </div>
@@ -90,34 +91,33 @@ Chat Room
               <i class="fa fa-bars" aria-hidden="true">Menu</i>
             </span>
             <a href="/logout"><button type="button" class="btn btn-success"><strong><i class="fa fa-sign-out"
-              aria-hidden="true"></i>Sign out</strong></button></a>
+                    aria-hidden="true"></i>Sign out</strong></button></a>
             <div class="text">
               <h6>Hello, </h6>
             </div>
-            <!--Messages Here-->
+          </div>
+        </div>
 
-            <div class="row no-gutters">
-            <div class="col-12 bg-primary" style="height: 76vh; width:auto" id="id_messages">
-              
+        <!--Messages Here-->
+        <div class="col-12 bg-primary" style="height: 76vh; width:auto" id="id_messages">
+        
+        </div>
 
+
+        <!--Input Messages-->
+        <div class="col-12" id="send">
+            <div class="input-group mb-3" id="inputmessage">
+              <input type="text" class="form-control" placeholder="Type Something" aria-label="Recipient's username"
+                aria-describedby="button-addon2" id="user_message">
+              <div class="input-group-append">
+                <button class="btn btn-warning" type="button" id="button-addon2">Send</button>
               </div>
             </div>
-          </div>
         </div>
-        <!--Input Messages-->
-        <div class="col-12 messages-panel" id="send">
-          <div class="row no-gutters">
-                <div class="input-group mb-3" id="inputmessage">
-                  <input type="text" class="form-control" placeholder="Type Something" aria-label="Recipient's username"
-                    aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-warning" type="button" id="button-addon2">Send</button>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
+
 
 {% endblock %}
