@@ -6,6 +6,11 @@ Sign in
 
 {% block content %}
 <!-- Bienvenue to Flack -->
+{% if get_flashed_messages() %}
+<div class="alert alert-danger" role="alert">
+    This nickname is already on use
+</div>
+{% endif %}
 
 <div class="container-section">
     <h1 class="title" style="color: aqua;">
@@ -20,7 +25,7 @@ Sign in
 
 <div class="row no-gutters">
     <div class="col-8">
-        <form action="/chat" method="POST">
+        <form action="/chat" method="POST" id="nick_user">
             <div class="form-group">
                 <input type="text" class="form-control" id="nick" name="nickname" placeholder="Nickname">
                 <small class="form-text text-muted">Pick a tricky nickname!</small>
@@ -65,5 +70,10 @@ Sign in
     </div>
 </div>
 
-
+<script>
+    document.querySelector("#nick_user").onsubmit = () => {
+        const nombre = document.querySelector("#nick").value;
+        localStorage.setItem("nickname", nombre)
+    };
+</script>
 {% endblock %}

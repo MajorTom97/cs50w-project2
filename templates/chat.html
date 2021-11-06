@@ -20,6 +20,8 @@ Chat Room
             src="../static/styles/img/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png"
             alt=""> 
             <p class="my-2 ml-3">{{session.name}}</p>
+            <a href="/logout"><button type="button" class="btn btn-success mx-5"><strong><i class="fa fa-sign-out"
+              aria-hidden="true"></i>Sign out</strong></button></a>
         </div>
 
         <!--Search for a channel-->
@@ -31,10 +33,10 @@ Chat Room
         </div>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+        <button type="button" class="btn btn-warning col-12" data-toggle="modal" data-target="#exampleModal">
           <i class="fa fa-slack" aria-hidden="true"></i>New Channel
         </button>
-
+      
 
         <!--Channels List-->
         <div class="col-12" id="container-channels">
@@ -86,31 +88,27 @@ Chat Room
           <div class="friend-drawer no-gutters friend-drawer--grey">
             <img class="profile-image" src="../static/styles/img/Contact-icon.png" alt="">
             <span class="settings-tray--right">
-              <i class="fa fa-refresh" aria-hidden="true">Refresh</i>
               <i class="fa fa-moon-o" aria-hidden="true">Night Mood</i>
-              <i class="fa fa-bars" aria-hidden="true">Menu</i>
             </span>
-            <a href="/logout"><button type="button" class="btn btn-success"><strong><i class="fa fa-sign-out"
-                    aria-hidden="true"></i>Sign out</strong></button></a>
-            <div class="text">
-              <h6>Hello, </h6>
-            </div>
           </div>
         </div>
 
         <!--Messages Here-->
-        <div class="col-12 bg-primary" style="height: 76vh; width:auto" id="id_messages">
-        
+        <div class="col-12 bg-primary" style="height: 90vh; width:auto" id="id_messages">
+          
+
         </div>
 
 
         <!--Input Messages-->
         <div class="col-12" id="send">
             <div class="input-group mb-3" id="inputmessage">
+              <span class="input-group-text" id="addon-wrapping">@</span>
               <input type="text" class="form-control" placeholder="Type Something" aria-label="Recipient's username"
                 aria-describedby="button-addon2" id="user_message">
               <div class="input-group-append">
-                <button class="btn btn-warning" type="button" id="button-addon2">Send</button>
+                <button class="btn btn-warning" type="button" id="button-addon2"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                  Send</button>
               </div>
             </div>
         </div>
@@ -118,6 +116,7 @@ Chat Room
     </div>
   </div>
 </div>
+
 
 
 {% endblock %}

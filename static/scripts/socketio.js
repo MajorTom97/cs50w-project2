@@ -1,4 +1,5 @@
 var socket = io();
+
 if (localStorage.getItem("last_channel") == null){
     localStorage.setItem("last_channel", "General");
 } 
@@ -54,11 +55,13 @@ socket.on("load_messages", data => {
     var container = document.querySelector("#id_messages");
     container.innerHTML = "";
     data.messages.forEach(element => {
-        let ele = `<span class="chat_bubble">${element.user} : ${element.content}<br>${element.time}</br></span>`;
-        container.innerHTML += ele; 
+    let ele = `<div class="chat-bubble chat-bubble--left">${element.user} : ${element.content}<br>${element.time}</br></div>`;
+    container.innerHTML += ele; 
     });
     
 })
+
+
 
 // socket.on('join', data => {
 //     const li = document.createElement("li");
@@ -84,7 +87,8 @@ document.querySelector("#button-addon2").onclick = () => {
 
 socket.on("newMessage", data => {
     var container = document.querySelector("#id_messages");
-    let element = `<span class="chat_bubble">${data.user} : ${data.content}<br>${data.time}</br></span>`;
+    let element = `<div class="chat-bubble chat-bubble--left">${data.user} : ${data.content}<br>${data.time}</br> </div>`;
+    element.className == "not-me"  
     container.innerHTML += element;
     console.log("received message")
 })
@@ -95,6 +99,18 @@ socket.on("showERROR", data => {
 
 socket.on("showLOG", data => {
     var container = document.querySelector("#id_messages");
-    let element = `<span class="chat_log">${data.message}</span>`;
+    let element = `<div class="chat_log alert alert-dark" role="alert">${data.message}</div>`;
     container.innerHTML += element;
 })
+
+// Themes
+const setTheme = theme => document.documentElement.className = theme;
+
+// tinymce.init({
+//     selector: "#addon-wrapping",
+//     plugins: "emoticons autoresize",
+//     toolbar: "emoticons",
+//     toolbar_location: "bottom",
+//     menubar: false,
+//     statusbar: false
+//   })

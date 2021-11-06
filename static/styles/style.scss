@@ -1,4 +1,12 @@
 $blue: #FFD8BE;
+// Moods
+
+
+:root.dark {
+  --bg-color: #121212;
+  --text-color: #45ADFE;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -63,6 +71,9 @@ $blue: #FFD8BE;
 // Chat Panel
 body{
   background-image: url(../styles/img/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container{
@@ -160,13 +171,19 @@ input {
   &--onhover:hover {
     background: $blue;
     cursor: pointer;
+    
+    p,
+    h6,
+    .time {
+      color: #fff !important;
+    }
   }
 }
 
-// Chat Bubble
+//Chat Bubble
 .chat-bubble {
   padding: 10px 14px;
-  background: #eee;
+  background: lightcoral;
   margin: 10px 30px;
   border-radius: 9px;
   position: relative;
@@ -182,4 +199,57 @@ input {
     border-bottom: 0;
     margin-top: -10px;
   }
+  
+  &--left {
+     &:after {
+      left: 0;
+      border-right-color: greenyellow;
+        border-left: 0;
+      margin-left: -20px;
+    }
+  }
+  
+  &--right {
+    &:after {
+      right: 0;
+      border-left-color: $blue;
+      border-right: 0;
+      margin-right: -20px;
+    }
+  }
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.offset-md-9 {
+  .chat-bubble {
+    background: $blue;
+    color: #fff;
+  }
+}
+
+// .not-me{
+//   width: 60%;
+//   word-wrap: break-word;
+//   background-color: lightcoral;
+//   padding: 7px 10px;
+//   border-radius: 10px 10px 10px 0;
+//   margin: 10px 0;
+// }
+
+// .me{
+//   width: 60%;
+//   word-wrap: break-word;
+//   background-color:greenyellow;
+//   padding: 7px 10px;
+//   border-radius: 10px 10px 0 10px;
+//   margin: 5px 0 5px auto;
+// }

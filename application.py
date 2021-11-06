@@ -1,7 +1,7 @@
 from collections import deque
 import os
 
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, redirect, render_template, request, session, url_for, flash
 from flask_socketio import SocketIO, emit, join_room, leave_room
 from helpers import login_required
 from time import localtime, strftime
@@ -45,6 +45,7 @@ def chat():
        nickname = request.form.get("nickname")
         # Check if the nicknmane is already useb by current user or not
        if nickname in nicknames:
+           flash("User already exists")
            return redirect("/chat") 
        # Session updated and add user to logged-in users
        session['name'] = nickname
@@ -119,10 +120,10 @@ def join_on(data):
     nickname = session.get("name")
     channel = data["channel"]
     join_room(channel)
-    message = f"{nickname} joined the {channel}"
+    message = f"{nickname} joined to {channel}"
     print("--------")
     print("--------")
-    print(f'{nickname} joined the {channel}')
+    print(f'{nickname} joined to {channel}')
     emit("showLOG", {"message": message}, to = channel)
 
 @socketio.on("leave")
@@ -130,10 +131,10 @@ def leave_chat(data):
     nickname = session.get("name")
     channel = data["channel"]
     leave_room(channel)
-    message = f"{nickname} leaved the {channel}"
+    message = f"{nickname} leaved {channel}"
     print("--------")
     print("--------")
-    print(f'{nickname} leaved the {channel}')
+    print(f'{nickname} leaved {channel}')
     emit("showLOG", {"message": message}, to = channel)
    
 

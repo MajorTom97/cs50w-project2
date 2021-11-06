@@ -1,3 +1,8 @@
+:root.dark {
+  --bg-color: #121212;
+  --text-color: #45ADFE;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -67,6 +72,9 @@
 
 body {
   background-image: url(../styles/img/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .container {
@@ -186,9 +194,15 @@ input:focus {
   cursor: pointer;
 }
 
+.channels--onhover:hover p,
+.channels--onhover:hover h6,
+.channels--onhover:hover .time {
+  color: #fff !important;
+}
+
 .chat-bubble {
   padding: 10px 14px;
-  background: #eee;
+  background: lightcoral;
   margin: 10px 30px;
   border-radius: 9px;
   position: relative;
@@ -205,5 +219,42 @@ input:focus {
   border: 20px solid transparent;
   border-bottom: 0;
   margin-top: -10px;
+}
+
+.chat-bubble--left:after {
+  left: 0;
+  border-right-color: greenyellow;
+  border-left: 0;
+  margin-left: -20px;
+}
+
+.chat-bubble--right:after {
+  right: 0;
+  border-left-color: #FFD8BE;
+  border-right: 0;
+  margin-right: -20px;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.offset-md-9 .chat-bubble {
+  background: #FFD8BE;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
