@@ -9,7 +9,42 @@
   font-family: 'Rampart One', cursive;
 }
 
-.button_signin {
+.containersignin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 700px;
+  width: 800px;
+  border: 10px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: wheat;
+}
+
+.box {
+  padding: 12px;
+  width: 65%;
+  margin: 15px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 20px;
+}
+
+#button_signin {
   width: 250px;
   color: white;
   font-size: 20px;
@@ -21,9 +56,23 @@
   margin-top: 30px;
 }
 
-.button_signin:hover {
-  -webkit-transition: purple;
-  transition: purple;
+#button_signin:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+/*Right Side*/
+.side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
 }
 
 .card {
@@ -199,6 +248,8 @@ input:focus {
 .channels--onhover:hover .time {
   color: #fff !important;
 }
+
+
 
 .chat-bubble {
   padding: 10px 14px;

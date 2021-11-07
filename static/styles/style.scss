@@ -1,7 +1,6 @@
 $blue: #FFD8BE;
 // Moods
 
-
 :root.dark {
   --bg-color: #121212;
   --text-color: #45ADFE;
@@ -15,7 +14,33 @@ $blue: #FFD8BE;
   
 // Base
 
-.button_signin{
+.containersignin{
+  display: flex;
+  height: 700px;
+  width: 800px;
+  border: 10px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  background-color: wheat;
+}
+
+.box{
+  padding: 12px;
+  width: 65%;
+  margin: 15px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 20px;
+}
+
+#button_signin{
   width: 250px;
   color: white;
   font-size: 20px;
@@ -27,8 +52,17 @@ $blue: #FFD8BE;
   margin-top: 30px;
 }
 
-.button_signin:hover{
-  transition: purple ;
+#button_signin:hover{
+  cursor: pointer;
+  background-color: aquamarine ;
+}
+
+/*Right Side*/
+.side{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
 
 .card{
@@ -181,6 +215,7 @@ input {
 }
 
 //Chat Bubble
+
 .chat-bubble {
   padding: 10px 14px;
   background: lightcoral;

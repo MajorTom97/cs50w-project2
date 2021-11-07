@@ -6,7 +6,14 @@ Chat Room
 
 {% block content %}
 
-
+<style>
+  .scroll {
+    width: 100%;
+    margin: auto;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+</style>
 
 <div class="container">
   <div class="row no-gutters">
@@ -38,7 +45,7 @@ Chat Room
       
 
         <!--Channels List-->
-        <div class="col-12" id="container-channels">
+        <div class="col-12 scroll" id="container-channels">
           <!--FOR JINJA CHANNELS-->
 
           {% for channels in channel_list %}
@@ -93,7 +100,7 @@ Chat Room
         </div>
 
         <!--Messages Here-->
-        <div class="col-12 bg-primary" style="height: 90vh; width:auto" id="id_messages">
+        <div class="col-12 bg-primary scroll" style="height: 90vh; width:auto" id="id_messages">
           
 
         </div>
