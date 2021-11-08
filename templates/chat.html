@@ -129,13 +129,13 @@ Chat Room
 <script>
 
   // alert('wewewewewewewewe.js')
-  // Variables para alternar el panel de emojis
+  // Altern emojis
 			const emojiBtn = document.querySelector('#emojis');
 			const picker = new EmojiButton();
 
 
 			window.addEventListener('DOMContentLoaded', () => {
-				// Codigo para mostrar los emojis
+				// Show emojis
 				picker.on('emoji', emoji => {
 					document.querySelector('#user_message').value += emoji;
 				});

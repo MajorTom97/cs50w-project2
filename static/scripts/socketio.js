@@ -1,6 +1,6 @@
 var socket = io();
 
-alert('socket.js');
+// alert('socket.js');
 
 if (localStorage.getItem("last_channel") == null){
     localStorage.setItem("last_channel", "General");
