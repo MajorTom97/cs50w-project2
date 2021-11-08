@@ -22,49 +22,65 @@ Sign in
 </div>
 
 
-<div class="containersignin">
+<div class="container">
     <div class="row no-gutters">
-        <div class="col-8">
+        <div class="col-6 text-center">
             <form action="/chat" method="POST" id="nick_user">
                 <div class="form-group">
                     <input type="text" class="form-control" id="nick" name="nickname" placeholder="Nickname">
-                    <small class="form-text text-muted">Pick a tricky nickname!</small>
+                    <small class="h3" style="color: burlywood;">Pick a tricky nickname!</small>
                 </div>
                 <button type="submit" id="button_signin">Sign in</button>
             </form>
         </div>
+
+        <div class="col-2"></div>
+
+        <div class="col-4">
+            <img src="../static/styles/img/messages.png" alt="menssaje" style="height: 250px; width: auto;" class="mr-4 img-fluid img-card">
+        </div>
     </div>
 </div>
 
-<div class="left">
-<div class="card text-center" style="width: 18rem;">
-    <img src="../static/styles/img/general.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">General Channel</h5>
-        <p class="card-text">Your own Space!</p>
-        <a href="#" class="btn btn-dark">Join</a>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="left">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="../static/styles/img/general.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">General Channel</h5>
+                        <p class="card-text">Your own Space!</p>
+                        <a href="#" class="btn btn-dark">Join</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card text-center" style="width: 18rem;">
+                <img src="../static/styles/img/cinema.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cinema</h5>
+                    <p class="card-text">Talk about it!</p>
+                    <a href="#" class="btn btn-primary">Join</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card text-center" style="width: 18rem;">
+                <img src="../static/styles/img/science2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Science</h5>
+                    <p class="card-text">Have some fun by learning a topic!</p>
+                    <a href="#" class="btn btn-primary">Join</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="card text-center" style="width: 18rem;">
-    <img src="../static/styles/img/cinema.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Cinema</h5>
-        <p class="card-text">Talk about it!</p>
-        <a href="#" class="btn btn-primary">Join</a>
-    </div>
-</div>
-
-<div class="card text-center" style="width: 18rem;">
-    <img src="../static/styles/img/science2.png" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Science</h5>
-        <p class="card-text">Have some fun by learning a topic!</p>
-        <a href="#" class="btn btn-primary">Join</a>
-    </div>
-</div>
-</div>
-    
 <script>
     document.querySelector("#nick_user").onsubmit = () => {
         const nombre = document.querySelector("#nick").value;

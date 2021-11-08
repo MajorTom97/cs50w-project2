@@ -9,7 +9,7 @@ from collections import deque
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.getenv("SECRET_KEY") or "esta/esmi/secret-key"
-socketio = SocketIO(app, cors_allowed_origins='*')
+socketio = SocketIO(app, )
 
 
 # global variables
@@ -37,7 +37,7 @@ def chat():
         if "name" in session:
             print(channels)
             return render_template("chat.html", channel_list = channels)
-
+        
         else:
             return render_template("base.html")
     else:
@@ -46,7 +46,7 @@ def chat():
         # Check if the nicknmane is already useb by current user or not
        if nickname in nicknames:
            flash("User already exists")
-           return redirect("/chat")
+           return redirect("/chat") 
        # Session updated and add user to logged-in users
        session['name'] = nickname
        # Add the list the names
@@ -56,8 +56,8 @@ def chat():
        print("---------------------")
        print(nickname)
        print(session['name'])
-
-       return redirect("/")
+       
+       return redirect("/") 
 
 @app.route("/logout")
 def logout():
@@ -69,7 +69,7 @@ def logout():
 @socketio.on('connect')
 def channel_list():
     emit('all-channels', channels=[])
-
+    
 
 
 @socketio.on('newChannel')
@@ -78,7 +78,7 @@ def create_channel(data):
     # newChannel=request.form.get("newChannel")
     # Dict key
     channel = data["channel"]
-    # Identified if the new Channel already exitst
+    # Identified if the new Channel already exitst 
     if channel and channel not in channels:
         channelMessage[channel] = []
         channels.append(channel)
@@ -105,15 +105,14 @@ def newMessages(data):
     print(data)
     message = data["message"]
     time = data["time"]
-    minutes = data["minutes"]
-    user_message = {"user": session.get("name"), "content": message, "time": time, "minutes": minutes, "val": data["val"]}
+    user_message = {"user": session.get("name"), "content": message, "time": time}
     channelMessage[channel] = deque(maxlen = 100)
     # channelMessage.append(message)
     channelMessage[channel].append(user_message)
     emit("newMessage", user_message, to = channel)
     # if lenght channels dictionary return the list of channels where message id
     # equal to the lsit of channels and display the new message on the screen
-
+    
 
 # Join to a channel
 @socketio.on("join")
@@ -137,7 +136,7 @@ def leave_chat(data):
     print("--------")
     print(f'{nickname} leaved {channel}')
     emit("showLOG", {"message": message}, to = channel)
-
+   
 
 if __name__=="__main__":
     socketio.run(app, debug=True)
